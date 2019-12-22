@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Persistence;
+using Domain;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
@@ -10,18 +13,32 @@ namespace API.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+
+        private readonly DataContext _contex;
+
+        public ValuesController(DataContext contex)
+        {
+            _contex = contex;
+        }
+
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public async Task<ActionResult<IEnumerable<Value>>> Get()
         {
-            return new string[] { "value1", "value2" };
+            var values = await _contex.Values.ToListAsync();
+            return Ok(values);
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public async Task<ActionResult<Value>> Get(int id)
         {
-            return "value";
+            var value = await _contex.Values.FindAsync(id);
+            if(value == null) 
+            {
+                return NotFound();
+            }
+            return Ok(value);
         }
 
         // POST api/values
