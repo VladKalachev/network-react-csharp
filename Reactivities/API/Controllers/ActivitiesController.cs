@@ -8,6 +8,7 @@ using Persistence;
 using Domain;
 using MediatR;
 using Application.Activities;
+using System.Threading;
 
 namespace API.Controllers
 {
@@ -24,9 +25,17 @@ namespace API.Controllers
 
         // GET api/activities
         [HttpGet]
-        public async Task<ActionResult<List<Activity>>> List()
+        public async Task<ActionResult<List<Activity>>> List(CancellationToken ct)
         {
-            return await _mediator.Send(new List.Query());
+            return await _mediator.Send(new List.Query(), ct);
         }
+
+        // GET api/activities/78c635db-61a8-4546-8c6e-bcdaddda61de
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Activity>> Details(Guid id)
+        {
+            return await _mediator.Send(new Details.Query{Id = id});
+        }
+
     }
 }
