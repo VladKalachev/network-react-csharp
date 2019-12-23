@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Header, Icon, List } from 'semantic-ui-react';
-import './App.css';
 import axios from 'axios';
 
 const App = () => {

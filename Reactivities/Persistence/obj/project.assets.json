@@ -4054,39 +4054,35 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vkalachev\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "/Users/vladkalachev/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\dev\\network-react-csharp\\Reactivities\\Persistence\\Persistence.csproj",
+      "projectUniqueName": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Persistence/Persistence.csproj",
       "projectName": "Persistence",
-      "projectPath": "c:\\dev\\network-react-csharp\\Reactivities\\Persistence\\Persistence.csproj",
-      "packagesPath": "C:\\Users\\vkalachev\\.nuget\\packages\\",
-      "outputPath": "c:\\dev\\network-react-csharp\\Reactivities\\Persistence\\obj\\",
+      "projectPath": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Persistence/Persistence.csproj",
+      "packagesPath": "/Users/vladkalachev/.nuget/packages/",
+      "outputPath": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Persistence/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\vkalachev\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/vladkalachev/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\DevExpress 19.1\\Components\\System\\Components\\Packages": {},
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\dev\\network-react-csharp\\Reactivities\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\dev\\network-react-csharp\\Reactivities\\Domain\\Domain.csproj"
+            "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Domain/Domain.csproj": {
+              "projectPath": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Domain/Domain.csproj"
             }
           }
         }
