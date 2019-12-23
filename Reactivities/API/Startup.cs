@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.OpenApi.Models;
 using Persistence;
 
 namespace API
@@ -30,6 +31,17 @@ namespace API
             services.AddDbContext<DataContext>(opt => 
             {
                 opt.UseSqlite(Configuration.GetConnectionString("DefaultConnection"));
+            });
+
+            // Stagger
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Reactivities API",
+                    Version = "v1"
+                });
+
             });
            
             services.AddCors(setup => 
@@ -56,6 +68,15 @@ namespace API
             }
 
             // app.UseHttpsRedirection();
+
+            // init Swagger 
+            // Swashbuckle.AspNetCore -Version 5.0.0-rc4
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
+
             app.UseCors("CorsPolicy");
             app.UseMvc();
         }
