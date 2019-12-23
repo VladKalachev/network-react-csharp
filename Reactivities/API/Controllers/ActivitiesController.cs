@@ -25,9 +25,9 @@ namespace API.Controllers
 
         // GET api/activities
         [HttpGet]
-        public async Task<ActionResult<List<Activity>>> List(CancellationToken ct)
+        public async Task<ActionResult<List<Activity>>> List()
         {
-            return await _mediator.Send(new List.Query(), ct);
+            return await _mediator.Send(new List.Query());
         }
 
         // GET api/activities/78c635db-61a8-4546-8c6e-bcdaddda61de
@@ -35,6 +35,13 @@ namespace API.Controllers
         public async Task<ActionResult<Activity>> Details(Guid id)
         {
             return await _mediator.Send(new Details.Query{Id = id});
+        }
+
+        // POST
+        [HttpPost]
+        public async Task<ActionResult<Unit>> Create([FromBody]Create.Command command)
+        {
+            return await _mediator.Send(command);
         }
 
     }
