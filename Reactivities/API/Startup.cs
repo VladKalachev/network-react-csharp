@@ -45,6 +45,12 @@ namespace API
                 });
 
             });
+            
+            // Костыль для Swagger для обхода дублирования схем
+            services.ConfigureSwaggerGen(options =>
+            {
+              options.CustomSchemaIds(x => x.FullName);
+            });
            
             services.AddCors(setup => 
                 {
