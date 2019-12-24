@@ -52,6 +52,14 @@ const App = () => {
   }
 
   /**
+   * Delete Activity
+   * @param id 
+   */
+  const handleDeleteActivity = (id: string) => {
+    setActivities([...activities.filter(a => a.id !== id)]);
+  }
+
+  /**
    * Effect
    */
   useEffect(() => {
@@ -83,6 +91,8 @@ const App = () => {
           createActivity={handleCreateActivity}
           // edit
           editActivity={handleEditActivity}
+          // delete
+          deleteActivity={handleDeleteActivity}
          />
       </Container> 
   </Fragment>
