@@ -6,6 +6,7 @@ import agent from "../api/agent";
 configure({enforceActions: 'always'});
 
 class ActivityStore {
+    
     @observable actitivyRegistry = new Map();
     @observable activities: IActivity[] = [];
     @observable selectedActivity: IActivity | undefined;
