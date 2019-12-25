@@ -1,15 +1,15 @@
-import React, { SyntheticEvent } from 'react'
+import React, { SyntheticEvent, useContext } from 'react'
 import { Grid } from 'semantic-ui-react';
 import { IActivity }from "../../../models/Activities"
 import ActivityList from './ActivityList';
 import ActivityDetails from '../details/ActivityDetails';
 import ActivityForm from '../form/ActivityForm';
+import { observer } from 'mobx-react-lite';
+import ActivityStore from "../../../stores/activityStore"
 
 interface IProps {
     activities: IActivity[];
     selectActivity: (id: string) => void;
-    selectedActivity: IActivity | null;
-    editMode: boolean;
     setEditMode: (editMode: boolean) => void;
     setSelectedActivity: (activity: IActivity | null) => void;
     createActivity: (activity: IActivity) => void;
@@ -21,9 +21,7 @@ interface IProps {
 
 const ActivityDashboad: React.FC<IProps> = ({ 
     activities, 
-    selectActivity, 
-    selectedActivity, 
-    editMode, 
+    selectActivity,
     setEditMode,
     setSelectedActivity,
     createActivity,
@@ -32,12 +30,16 @@ const ActivityDashboad: React.FC<IProps> = ({
     submittiong,
     target
  }) => {
+
+    /**
+    * Store
+    */
+    const activityStore = useContext(ActivityStore);
+    const {editMode, selectedActivity} = activityStore;
     return (
         <Grid>
             <Grid.Column width={10} >
-              <ActivityList 
-                activities={activities} 
-                selectActivity={selectActivity}
+              <ActivityList
                 deleteActivity={deleteActivity}
                 submittiong={submittiong}
                 target={target}
@@ -45,8 +47,7 @@ const ActivityDashboad: React.FC<IProps> = ({
             </Grid.Column>
             <Grid.Column width={6} >
                { selectedActivity && !editMode && (
-                <ActivityDetails 
-                    activity={selectedActivity} 
+                <ActivityDetails
                     setEditMode={setEditMode} 
                     setSelectedActivity={setSelectedActivity}
                /> )}
@@ -64,4 +65,4 @@ const ActivityDashboad: React.FC<IProps> = ({
     )
 }
 
-export default ActivityDashboad;
+export default observer(ActivityDashboad);
