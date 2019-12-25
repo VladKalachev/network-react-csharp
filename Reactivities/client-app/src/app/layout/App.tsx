@@ -4,6 +4,7 @@ import { IActivity } from '../../models/Activities';
 import NavBar from '../../features/nav/NavBar';
 import ActivityDashboad from '../../features/activities/dashboard/ActivityDashboad';
 import agent from '../../api/agent';
+import LoadingComponent from './LoadingComponent';
 
 const App = () => {
 
@@ -13,6 +14,7 @@ const App = () => {
   const [activities, setActivities] = useState<IActivity[]>([])
   const [selectedActivity, setSelectedActivity] = useState<IActivity | null>(null);
   const [editMode, setEditMode] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   /**
    * Select Activity
@@ -36,9 +38,11 @@ const App = () => {
    * @param activity List Activity
    */
   const handleCreateActivity = (activity: IActivity) => {
-    setActivities([...activities, activity]);
-    setSelectedActivity(activity);
-    setEditMode(false);
+    agent.Activities.create(activity).then(() => {
+      setActivities([...activities, activity]);
+      setSelectedActivity(activity);
+      setEditMode(false);
+    });
   };
 
   /**
@@ -46,9 +50,11 @@ const App = () => {
    * @param activity List Activity
    */
   const handleEditActivity = (activity: IActivity) => {
-    setActivities([...activities.filter(a => a.id !== activity.id), activity]);
-    setSelectedActivity(activity);
-    setEditMode(false);
+    agent.Activities.update(activity).then(() => {
+      setActivities([...activities.filter(a => a.id !== activity.id), activity]);
+      setSelectedActivity(activity);
+      setEditMode(false);
+    });
   }
 
   /**
@@ -56,7 +62,9 @@ const App = () => {
    * @param id 
    */
   const handleDeleteActivity = (id: string) => {
-    setActivities([...activities.filter(a => a.id !== id)]);
+    agent.Activities.delete(id).then(() => {
+      setActivities([...activities.filter(a => a.id !== id)]);
+    }); 
   }
 
   /**
@@ -71,9 +79,11 @@ const App = () => {
         activities.push(activity);
       })
       setActivities(activities);
-    });
+    }).then(() => setLoading(false));
   }, []);
 
+  if(loading) return <LoadingComponent content='Loading activities...'/>
+  
   return (
     <Fragment>
       <NavBar openCreateForm={handleOpenCreateForm} />
