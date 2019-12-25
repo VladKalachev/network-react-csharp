@@ -24,36 +24,6 @@ const App = () => {
   const [target, setTarget] = useState('');
 
   /**
-   * Select Activity
-   * @param id Activity id
-   */
-  const hadnleSelectedActivity = (id: string) => {
-      setSelectedActivity(activities.filter(a => a.id === id)[0]);
-      setEditMode(false);
-  };
-
-  /**
-   * Open Create Form Activity
-   */
-  const handleOpenCreateForm = () => {
-    setSelectedActivity(null);
-    setEditMode(true);
-  };
-
-  /**
-   * Create Activity
-   * @param activity List Activity
-   */
-  const handleCreateActivity = (activity: IActivity) => {
-    setSubmittiong(true);
-    agent.Activities.create(activity).then(() => {
-      setActivities([...activities, activity]);
-      setSelectedActivity(activity);
-      setEditMode(false);
-    }).then(() => setSubmittiong(false));
-  };
-
-  /**
    * Edit Activity
    * @param activity List Activity
    */
@@ -89,15 +59,11 @@ const App = () => {
 
   return (
     <Fragment>
-      <NavBar openCreateForm={handleOpenCreateForm} />
+      <NavBar/>
       <Container style={{ marginTop: '7em' }}>
         <ActivityDashboad
-          activities={activityStore.activities} 
-          selectActivity={hadnleSelectedActivity} 
           setEditMode={setEditMode}
           setSelectedActivity={setSelectedActivity}
-          // create
-          createActivity={handleCreateActivity}
           // edit
           editActivity={handleEditActivity}
           // delete
