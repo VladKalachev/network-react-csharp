@@ -18,7 +18,6 @@ const ActivityForm: React.FC<IProps> = ({
     editActivity,
     submittiong
  }) => {
-
     const initializForm = () => {
         if(initialFormState) {
             return initialFormState
@@ -34,7 +33,6 @@ const ActivityForm: React.FC<IProps> = ({
             }
         }
     }
-
     /**
      * Store
      */
@@ -44,7 +42,7 @@ const ActivityForm: React.FC<IProps> = ({
      * State
      */
     const [activity, setActivity] = useState<IActivity>(initializForm);
-
+    
     const handleSubmit = () => {
         if(activity.id.length === 0){
             let newActivity = {

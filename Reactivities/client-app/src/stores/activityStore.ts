@@ -1,4 +1,4 @@
-import { observable, action } from "mobx";
+import { observable, action, computed } from "mobx";
 import { createContext } from "react";
 import { IActivity } from "../models/Activities";
 import agent from "../api/agent";
@@ -23,6 +23,10 @@ class ActivityStore {
             console.log(error)
         }
     };
+
+    @computed get activitiesByDate() {
+        return this.activities.sort((a, b) => Date.parse(a.date) - Date.parse(b.date));
+    }
 
     /**
      * Create Activity
