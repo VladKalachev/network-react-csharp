@@ -7,7 +7,6 @@ import ActivityStore from "../../stores/activityStore"
 import { observer } from "mobx-react-lite";
 
 const App = () => {
-
   /**
    * Store
    */

@@ -9,9 +9,7 @@ interface IProps {
     activity: IActivity | undefined;
 }
 
-const ActivityForm: React.FC<IProps> = ({
-    activity: initialFormState,
- }) => {
+const ActivityForm: React.FC<IProps> = ({ activity: initialFormState }) => {
     const initializForm = () => {
         if(initialFormState) {
             return initialFormState

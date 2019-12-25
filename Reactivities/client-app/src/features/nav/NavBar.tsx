@@ -4,9 +4,6 @@ import { observer } from 'mobx-react-lite';
 import ActivityStore from "../../stores/activityStore"
 
 const NavBar: React.FC = () => {
-    /**
-     * Store
-     */
     const activityStore = useContext(ActivityStore);
     const {openCreateForm} = activityStore;
     return (

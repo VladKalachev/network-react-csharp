@@ -4,13 +4,11 @@ import { observer } from 'mobx-react-lite';
 import ActivityStore from "../../../stores/activityStore"
 
 const ActivityList: React.FC = () => {
-
     /**
     * Store
     */
     const activityStore = useContext(ActivityStore);
     const {activitiesByDate, selectActivity, submitting, target, deleteActivity} = activityStore;
-
     return (
         <Segment clearing>
             <Item.Group divided>

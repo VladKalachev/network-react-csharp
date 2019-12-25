@@ -7,7 +7,6 @@ import { observer } from 'mobx-react-lite';
 import ActivityStore from "../../../stores/activityStore"
 
 const ActivityDashboad: React.FC = () => {
-
     /**
     * Store
     */
@@ -24,7 +23,7 @@ const ActivityDashboad: React.FC = () => {
                { editMode && (
                 <ActivityForm
                     key={(selectedActivity && selectedActivity.id) || 0}
-                    activity={selectedActivity}
+                    activity={selectedActivity!}
                /> )}
             </Grid.Column>
         </Grid>
