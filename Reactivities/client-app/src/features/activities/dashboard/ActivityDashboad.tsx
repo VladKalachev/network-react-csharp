@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { SyntheticEvent } from 'react'
 import { Grid } from 'semantic-ui-react';
 import { IActivity }from "../../../models/Activities"
 import ActivityList from './ActivityList';
@@ -14,7 +14,9 @@ interface IProps {
     setSelectedActivity: (activity: IActivity | null) => void;
     createActivity: (activity: IActivity) => void;
     editActivity: (activity: IActivity) => void;
-    deleteActivity: (id: string) => void;
+    deleteActivity: (event: SyntheticEvent<HTMLButtonElement>, id: string) => void;
+    target: string;
+    submittiong: boolean;
 }
 
 const ActivityDashboad: React.FC<IProps> = ({ 
@@ -26,7 +28,9 @@ const ActivityDashboad: React.FC<IProps> = ({
     setSelectedActivity,
     createActivity,
     editActivity,
-    deleteActivity
+    deleteActivity,
+    submittiong,
+    target
  }) => {
     return (
         <Grid>
@@ -35,6 +39,8 @@ const ActivityDashboad: React.FC<IProps> = ({
                 activities={activities} 
                 selectActivity={selectActivity}
                 deleteActivity={deleteActivity}
+                submittiong={submittiong}
+                target={target}
               />
             </Grid.Column>
             <Grid.Column width={6} >
@@ -46,11 +52,12 @@ const ActivityDashboad: React.FC<IProps> = ({
                /> )}
                { editMode && (
                 <ActivityForm
-                    key={selectedActivity && selectedActivity.id || 0}
+                    key={(selectedActivity && selectedActivity.id) || 0}
                     setEditMode={setEditMode} 
                     activity={selectedActivity}
                     createActivity={createActivity}
                     editActivity={editActivity}
+                    submittiong={submittiong}
                /> )}
             </Grid.Column>
         </Grid>

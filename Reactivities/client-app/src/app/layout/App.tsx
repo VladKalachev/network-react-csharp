@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, useEffect, Fragment, SyntheticEvent } from 'react';
 import { Container } from 'semantic-ui-react';
 import { IActivity } from '../../models/Activities';
 import NavBar from '../../features/nav/NavBar';
@@ -15,6 +15,8 @@ const App = () => {
   const [selectedActivity, setSelectedActivity] = useState<IActivity | null>(null);
   const [editMode, setEditMode] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [submitting, setSubmittiong] = useState(false);
+  const [target, setTarget] = useState('');
 
   /**
    * Select Activity
@@ -38,11 +40,12 @@ const App = () => {
    * @param activity List Activity
    */
   const handleCreateActivity = (activity: IActivity) => {
+    setSubmittiong(true);
     agent.Activities.create(activity).then(() => {
       setActivities([...activities, activity]);
       setSelectedActivity(activity);
       setEditMode(false);
-    });
+    }).then(() => setSubmittiong(false));
   };
 
   /**
@@ -50,21 +53,24 @@ const App = () => {
    * @param activity List Activity
    */
   const handleEditActivity = (activity: IActivity) => {
+    setSubmittiong(true);
     agent.Activities.update(activity).then(() => {
       setActivities([...activities.filter(a => a.id !== activity.id), activity]);
       setSelectedActivity(activity);
       setEditMode(false);
-    });
+    }).then(() => setSubmittiong(false));
   }
 
   /**
    * Delete Activity
    * @param id 
    */
-  const handleDeleteActivity = (id: string) => {
+  const handleDeleteActivity = (event: SyntheticEvent<HTMLButtonElement>, id: string) => {
+    setSubmittiong(true);
+    setTarget(event.currentTarget.name);
     agent.Activities.delete(id).then(() => {
       setActivities([...activities.filter(a => a.id !== id)]);
-    }); 
+    }).then(() => setSubmittiong(false)); 
   }
 
   /**
@@ -83,7 +89,7 @@ const App = () => {
   }, []);
 
   if(loading) return <LoadingComponent content='Loading activities...'/>
-  
+
   return (
     <Fragment>
       <NavBar openCreateForm={handleOpenCreateForm} />
@@ -102,6 +108,8 @@ const App = () => {
           editActivity={handleEditActivity}
           // delete
           deleteActivity={handleDeleteActivity}
+          submittiong={submitting}
+          target={target}
          />
       </Container> 
   </Fragment>
