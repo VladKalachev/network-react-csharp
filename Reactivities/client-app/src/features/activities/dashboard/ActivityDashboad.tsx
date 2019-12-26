@@ -14,17 +14,11 @@ const ActivityDashboad: React.FC = () => {
     const {editMode, activity} = activityStore;
     return (
         <Grid>
-            <Grid.Column width={10} >
+            <Grid.Column width={10}>
               <ActivityList />
             </Grid.Column>
-            <Grid.Column width={6} >
-               { activity && !editMode && (
-                <ActivityDetails /> )}
-               { editMode && (
-                <ActivityForm
-                    key={(activity && activity.id) || 0}
-                    activity={activity!}
-               /> )}
+            <Grid.Column width={6}>
+             <h2>Activity filters</h2>
             </Grid.Column>
         </Grid>
     )

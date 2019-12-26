@@ -24,7 +24,7 @@ const ActivityList: React.FC = () => {
                             </Item.Description>
                             <Item.Extra>
                                 <Button 
-                                    as={Link} to={`/activitis/${activity.id}`} 
+                                    as={Link} to={`/activities/${activity.id}`} 
                                     floated='right'
                                     content='View'
                                     color='blue'
