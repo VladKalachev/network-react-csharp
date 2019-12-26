@@ -5,7 +5,7 @@ import { observer } from 'mobx-react-lite';
 
 const ActivityDetails: React.FC = () => {
     const activityStore = useContext(ActivityStore);
-    const { selectedActivity: activity, openEditForm, cancelSelectedActivity } = activityStore;
+    const { activity, openEditForm, cancelSelectedActivity } = activityStore;
     return (
         <Card fluid>
             <Image src={`/assets/categoryImages/${activity!.category}.jpg`} wrapped ui={false} />
@@ -19,7 +19,7 @@ const ActivityDetails: React.FC = () => {
             </Card.Description>
             </Card.Content>
             <Card.Content extra>
-                <Button 
+                <Button
                     onClick={() => openEditForm(activity!.id)} 
                     basic 
                     color='blue' 
