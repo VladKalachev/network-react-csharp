@@ -1,40 +1,47 @@
-import React, { useState, FormEvent, useContext } from 'react';
+import React, { useState, FormEvent, useContext, useEffect } from 'react';
 import { Segment, Form, Button } from 'semantic-ui-react';
 import { IActivity } from '../../../models/Activities';
 import {v4 as uuid } from 'uuid';
 import { observer } from 'mobx-react-lite';
 import ActivityStore from "../../../stores/activityStore";
+import { RouteComponentProps } from 'react-router-dom';
 
-interface IProps {
-    activity: IActivity | undefined;
+interface DetailParams {
+    id: string;
 }
 
-const ActivityForm: React.FC<IProps> = ({ activity: initialFormState }) => {
-    const initializForm = () => {
-        if(initialFormState) {
-            return initialFormState
-        } else {
-            return {
-                id: '',
-                title: '',
-                category: '',
-                description: '',
-                date: '',
-                city: '',
-                venue: ''
-            }
-        }
-    }
+const ActivityForm: React.FC<RouteComponentProps<DetailParams>> = ({ match, history }) => {  
     /**
      * Store
      */
     const activityStore = useContext(ActivityStore);
-    const {createActivity, editActivity, submitting, cancelFromOpen} = activityStore;
+    const {
+        createActivity, 
+        editActivity, 
+        submitting, 
+        cancelFromOpen, 
+        activity: initializFormState, 
+        loadActivity
+    } = activityStore;
+
+    const [activity, setActivity] = useState<IActivity>({
+        id: '',
+        title: '',
+        category: '',
+        description: '',
+        date: '',
+        city: '',
+        venue: ''
+    });
     /**
-     * State
+     * Effect
      */
-    const [activity, setActivity] = useState<IActivity>(initializForm);
-    
+    useEffect(() => {
+        if(match.params.id){
+            loadActivity(match.params.id).then(() => initializFormState && setActivity(initializFormState));
+        }
+    }, [initializFormState]);
+
     const handleSubmit = () => {
         if(activity.id.length === 0){
             let newActivity = {
