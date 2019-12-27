@@ -38,8 +38,10 @@ const ActivityForm: React.FC<RouteComponentProps<DetailParams>> = ({ match, hist
      * Effect
      */
     useEffect(() => {
-        if(match.params.id){
-            loadActivity(match.params.id).then(() => initializFormState && setActivity(initializFormState));
+        if(match.params.id && activity.id.length === 0){
+            loadActivity(match.params.id).then(
+                () => initializFormState && setActivity(initializFormState)
+            );
         }
         return () => {
             clearActivity()
@@ -48,7 +50,8 @@ const ActivityForm: React.FC<RouteComponentProps<DetailParams>> = ({ match, hist
         clearActivity,
         initializFormState,
         loadActivity,
-        match.params.id
+        match.params.id,
+        activity.id.length
     ]);
 
     const handleSubmit = () => {
@@ -57,11 +60,10 @@ const ActivityForm: React.FC<RouteComponentProps<DetailParams>> = ({ match, hist
                 ...activity,
                 id: uuid()
             }
-            createActivity(newActivity);
+            createActivity(newActivity).then(() => history.push(`/activities/${newActivity.id}`));
         } else {
-            editActivity(activity);
+            editActivity(activity).then(() => history.push(`/activities/${activity.id}`));
         }
-        console.log(activity);
     }
 
     /**
