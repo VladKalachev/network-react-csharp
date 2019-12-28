@@ -30,6 +30,6 @@ const App: React.FC<RouteComponentProps> = ({location}) => {
       /> 
   </Fragment>
   );
-}
+};
 
 export default withRouter(observer(App));
