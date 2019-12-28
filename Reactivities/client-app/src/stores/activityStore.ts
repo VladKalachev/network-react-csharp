@@ -6,12 +6,9 @@ import agent from "../api/agent";
 configure({enforceActions: 'always'});
 
 class ActivityStore {
-
     @observable actitivyRegistry = new Map();
-    @observable activities: IActivity[] = [];
     @observable activity: IActivity | null = null ;
     @observable loadingInitial = false;
-    @observable editMode = false;
     @observable submitting = false;
     @observable target = '';
 
@@ -79,7 +76,6 @@ class ActivityStore {
             await agent.Activities.create(activity);
             runInAction('create activity',() => {
                 this.actitivyRegistry.set(activity.id, activity);
-                this.editMode = false;
                 this.submitting = false;
             });
             
@@ -102,7 +98,6 @@ class ActivityStore {
             runInAction('edit activity',() => {
                 this.actitivyRegistry.set(activity.id, activity);
                 this.activity = activity;
-                this.editMode = false;
                 this.submitting = false;
             });
            
@@ -137,36 +132,6 @@ class ActivityStore {
             console.log(error);
         }
     }
-
-    /**
-     * Open Create Form Activity
-     */
-    @action openCreateForm = () => {
-        this.editMode = true;
-        this.activity = null;
-    }
-
-    /**
-     * Open Edit Form Activity
-     */
-    @action openEditForm = (id: string) => {
-        this.activity = this.actitivyRegistry.get(id);
-        this.editMode = true;
-    }
-
-    @action cancelSelectedActivity = () => {
-        this.activity = null;
-    }
-
-    @action cancelFromOpen = () => {
-        this.editMode = false;
-    }
-
-    @action selectActivity = (id: string) => {
-        this.activity = this.actitivyRegistry.get(id);
-        this.editMode = false;
-    };
-
 }
 
 export default createContext(new ActivityStore())
