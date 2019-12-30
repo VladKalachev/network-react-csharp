@@ -119,6 +119,10 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[8.4.0, )"
+            },
             "MediatR.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[7.0.0, )"
