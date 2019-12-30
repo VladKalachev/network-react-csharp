@@ -40,7 +40,7 @@ namespace API.Controllers
             return await _mediator.Send(command);
         }
 
-        // PUT +
+        // PUT
         [HttpPut("{id}")]
         public async Task<ActionResult<Unit>> Edit(Guid id, Edit.Command command)
         {
