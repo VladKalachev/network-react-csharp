@@ -1,6 +1,6 @@
-import React, { useState, FormEvent, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Segment, Form, Button, Grid } from 'semantic-ui-react';
-import { IActivityFormValues, ActivityFormValues } from '../../../app/models/Activities';
+import {  ActivityFormValues } from '../../../app/models/Activities';
 import {v4 as uuid } from 'uuid';
 import { observer } from 'mobx-react-lite';
 import ActivityStore from "../../../app/stores/activityStore";
@@ -11,7 +11,23 @@ import TextAreaInput from '../../../app/common/form/TextAreaInput';
 import SelectInput from '../../../app/common/form/SelectInput';
 import {category} from '../../../app/common/options/categoryOptions';
 import DateInput from '../../../app/common/form/DateInput';
-import { combineDateAndTime } from '../../../app/common/util/util';
+import {combineDateAndTime} from '../../../app/common/util/util';
+import {combineValidators, isRequired, composeValidators, hasLengthGreaterThan} from 'revalidate';
+
+const validate = combineValidators({
+  title: isRequired({ message: 'The event title is required' }),
+  category: isRequired('Category'),
+  description: composeValidators(
+    isRequired('Description'),
+    hasLengthGreaterThan(4)({
+      message: 'Description needs to be at least 5 characters'
+    })
+  )(),
+  city: isRequired('City'),
+  venue: isRequired('Venue'),
+  date: isRequired('Date'),
+  time: isRequired('Time')
+});
 
 interface DetailParams {
     id: string;
@@ -24,8 +40,9 @@ const ActivityForm: React.FC<RouteComponentProps<DetailParams>> = ({
     const activityStore = useContext(ActivityStore);
     const {
       submitting,
-      activity: initialFormState,
       loadActivity,
+      createActivity,
+      editActivity
     } = activityStore;
   
     const [activity, setActivity] = useState(new ActivityFormValues());
@@ -47,33 +64,26 @@ const ActivityForm: React.FC<RouteComponentProps<DetailParams>> = ({
       const dateAndTime = combineDateAndTime(values.date, values.time);
       const {date, time, ...activity} = values;
       activity.date = dateAndTime
-      console.log(activity);
+       if (!activity.id) {
+        let newActivity = {
+          ...activity,
+          id: uuid()
+        };
+        createActivity(newActivity);
+      } else {
+        editActivity(activity);
+      }
     };
 
-    // const handleSubmit = () => {
-    //   if (activity.id.length === 0) {
-    //     let newActivity = {
-    //       ...activity,
-    //       id: uuid()
-    //     };
-    //     createActivity(newActivity).then(() =>
-    //       history.push(`/activities/${newActivity.id}`)
-    //     );
-    //   } else {
-    //     editActivity(activity).then(() =>
-    //       history.push(`/activities/${activity.id}`)
-    //     );
-    //   }
-    // };
-  
     return (
       <Grid>
         <Grid.Column width={10}>
           <Segment clearing>
             <FinalForm
+              validate={validate}
               initialValues={activity}
               onSubmit={handleFinalFormSubmit}
-              render={({handleSubmit}) => (
+              render={({handleSubmit, invalid, pristine}) => (
              <Form onSubmit={handleSubmit} loading={loading}>
                 <Field
                   name='title'
@@ -129,12 +139,16 @@ const ActivityForm: React.FC<RouteComponentProps<DetailParams>> = ({
                 loading={submitting}
                 floated='right'
                 positive
-                disabled={loading}
+                disabled={loading || invalid || pristine}
                 type='submit'
                 content='Submit'
               />
               <Button
-                onClick={() => history.push('/activities')}
+                onClick={
+                  activity.id
+                    ? () => history.push(`/activities/${activity.id}`)
+                    : () => history.push('/activities')
+                }
                 floated='right'
                 disabled={loading}
                 type='button'
