@@ -23,17 +23,16 @@ namespace API.Middleware
             try
             {
                 await _next(context);
-            }
+            } 
             catch (Exception ex)
             {
-                
                 await HandleExceptionAsync(context, ex, _logger);
             }
         }
 
         private async Task HandleExceptionAsync(HttpContext context, Exception ex, ILogger<ErrorHandlingMiddleware> logger)
         {
-           object errors = null;
+            object errors = null;
 
             switch (ex)
             {
