@@ -30,6 +30,9 @@
             "projectReferences": {
               "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Application/Application.csproj": {
                 "projectPath": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Application/Application.csproj"
+              },
+              "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Infrastructure/Infrastructure.csproj": {
+                "projectPath": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Infrastructure/Infrastructure.csproj"
               }
             }
           }
@@ -181,6 +184,60 @@
               "target": "Package",
               "version": "[2.2.0, )"
             },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Infrastructure/Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Infrastructure/Infrastructure.csproj",
+        "projectName": "Infrastructure",
+        "projectPath": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Infrastructure/Infrastructure.csproj",
+        "packagesPath": "/Users/vladkalachev/.nuget/packages/",
+        "outputPath": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/vladkalachev/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Application/Application.csproj": {
+                "projectPath": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Application/Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",

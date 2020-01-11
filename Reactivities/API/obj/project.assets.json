@@ -4784,6 +4784,19 @@
           "bin/placeholder/Domain.dll": {}
         }
       },
+      "Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Application": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Infrastructure.dll": {}
+        }
+      },
       "Persistence/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -12917,6 +12930,11 @@
       "path": "../Domain/Domain.csproj",
       "msbuildProject": "../Domain/Domain.csproj"
     },
+    "Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../Infrastructure/Infrastructure.csproj",
+      "msbuildProject": "../Infrastructure/Infrastructure.csproj"
+    },
     "Persistence/1.0.0": {
       "type": "project",
       "path": "../Persistence/Persistence.csproj",
@@ -12926,6 +12944,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
       "Application >= 1.0.0",
+      "Infrastructure >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0",
@@ -12963,6 +12982,9 @@
           "projectReferences": {
             "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Application/Application.csproj": {
               "projectPath": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Application/Application.csproj"
+            },
+            "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Infrastructure/Infrastructure.csproj": {
+              "projectPath": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Infrastructure/Infrastructure.csproj"
             }
           }
         }

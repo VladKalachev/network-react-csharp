@@ -40,3 +40,5 @@ C:/dev/network-react-csharp/Reactivities/API/bin/Debug/netcoreapp2.2/Domain.pdb
 C:/dev/network-react-csharp/Reactivities/API/bin/Debug/netcoreapp2.2/Persistence.pdb
 C:/dev/network-react-csharp/Reactivities/API/obj/Debug/netcoreapp2.2/API.RazorTargetAssemblyInfo.cache
 C:/dev/network-react-csharp/Reactivities/API/obj/Debug/netcoreapp2.2/API.csproj.CopyComplete
+/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/API/bin/Debug/netcoreapp2.2/Infrastructure.dll
+/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/API/bin/Debug/netcoreapp2.2/Infrastructure.pdb
