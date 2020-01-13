@@ -13,7 +13,9 @@ export default class UserStore {
     
     @observable user: IUser | null = null;
 
-    @computed get isLoggedIn() {return !this.user}
+    @computed get isLoggedIn() {
+      return !!this.user;
+    }
 
     @action login = async (values: IUserFormValues) => {
         try {
@@ -40,6 +42,17 @@ export default class UserStore {
             throw error;
         }
     }
+
+    @action getUser = async () => {
+        try {
+            const user = await agent.User.current();
+            runInAction(() => {
+                this.user = user;
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    };
 
     @action logout = () => {
         this.rootStore.commonStore.setToken(null);
