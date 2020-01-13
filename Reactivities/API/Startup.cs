@@ -76,6 +76,19 @@ namespace API
             var identityBuilder = new IdentityBuilder(builder.UserType, builder.Services);
             identityBuilder.AddEntityFrameworkStores<DataContext>();
             identityBuilder.AddSignInManager<SignInManager<AppUser>>();
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("super secret key"));
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(opt =>
+                {
+                    opt.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = key,
+                        ValidateAudience = false,
+                        ValidateIssuer = false
+                    };
+                });
             
             services.AddScoped<IJwtGenerator, JwtGenerator>();
         }
@@ -96,6 +109,12 @@ namespace API
 
             // app.UseHttpsRedirection();
 
+            //app.UseRouting();
+            app.UseCors("CorsPolicy");
+
+            app.UseAuthentication();
+            //app.UseAuthorization();
+
             // init Swagger 
             // Swashbuckle.AspNetCore -Version 5.0.0-rc4
             app.UseSwagger();
@@ -104,7 +123,7 @@ namespace API
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
             });
 
-            app.UseCors("CorsPolicy");
+            
             app.UseMvc();
         }
     }
