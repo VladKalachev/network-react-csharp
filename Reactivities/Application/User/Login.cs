@@ -32,8 +32,9 @@ namespace Application.User
         {
             private readonly UserManager<AppUser> _userManager;
             private readonly SignInManager<AppUser> _signInManager;
-            private readonly Application.Interfaces.IJwtGenerator _jwtGenerator;
-            public Handler(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, Application.Interfaces.IJwtGenerator jwtGenerator)
+            private readonly IJwtGenerator _jwtGenerator;
+            public Handler(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IJwtGenerator jwtGenerator
+)
             {
                 _jwtGenerator = jwtGenerator;
                 _signInManager = signInManager;
@@ -53,8 +54,8 @@ namespace Application.User
                 if (result.Succeeded)
                 {
 
-                    Console.WriteLine(11111);
-                    Console.WriteLine(user);
+                   // Console.WriteLine(11111);
+                   // Console.WriteLine(user);
                     
                     // TODO: generate token
                     return new User
