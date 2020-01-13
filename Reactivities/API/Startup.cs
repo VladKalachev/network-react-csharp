@@ -66,6 +66,12 @@ namespace API
 
             // Mediatr
             services.AddMediatR(typeof(List.Handler).Assembly);
+
+            services.AddMvc(opt =>
+            {
+                var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+                opt.Filters.Add(new AuthorizeFilter(policy));
+            });
             
             services.AddMvc()
                 .AddFluentValidation(cfg => 
