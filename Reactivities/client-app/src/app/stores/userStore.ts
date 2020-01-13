@@ -19,7 +19,16 @@ export default class UserStore {
             const user = await agent.User.login(values);
             this.user = user;
         } catch (error) {
-            console.log(error);
+            throw error;
+        }
+    }
+
+    @action register = async (values: IUserFormValues) => {
+        try {
+            const user = await agent.User.register(values);
+            this.user = user;
+        } catch (error) {
+            throw error;
         }
     }
 }
