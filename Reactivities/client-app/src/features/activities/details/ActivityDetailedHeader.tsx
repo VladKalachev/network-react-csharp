@@ -1,6 +1,6 @@
 import React from 'react';
 import { Segment, Item, Header, Button, Image } from 'semantic-ui-react';
-import { IActivity } from '../../../app/models/Activities';
+import { IActivity } from '../../../app/models/activities';
 import { observer } from 'mobx-react-lite';
 import { Link } from 'react-router-dom';
 import { format } from 'date-fns';

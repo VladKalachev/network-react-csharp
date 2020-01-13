@@ -1,6 +1,6 @@
 import React from 'react';
 import { Segment, Grid, Icon } from 'semantic-ui-react';
-import { IActivity } from '../../../app/models/Activities';
+import { IActivity } from '../../../app/models/activities';
 import { format } from 'date-fns';
 
 const ActivityDetailedInfo: React.FC<{activity: IActivity}> = ({activity}) => {
