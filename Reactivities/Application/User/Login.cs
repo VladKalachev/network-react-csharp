@@ -53,10 +53,7 @@ namespace Application.User
 
                 if (result.Succeeded)
                 {
-
-                   // Console.WriteLine(11111);
-                   // Console.WriteLine(user);
-                    
+ 
                     // TODO: generate token
                     return new User
                     {
