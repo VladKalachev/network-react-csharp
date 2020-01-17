@@ -8647,11 +8647,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dev\\network-react-csharp\\Reactivities\\Application\\Application.csproj",
+      "projectUniqueName": "c:\\dev\\network-react-csharp\\Reactivities\\Application\\Application.csproj",
       "projectName": "Application",
-      "projectPath": "C:\\dev\\network-react-csharp\\Reactivities\\Application\\Application.csproj",
+      "projectPath": "c:\\dev\\network-react-csharp\\Reactivities\\Application\\Application.csproj",
       "packagesPath": "C:\\Users\\vkalachev\\.nuget\\packages\\",
-      "outputPath": "C:\\dev\\network-react-csharp\\Reactivities\\Application\\obj\\",
+      "outputPath": "c:\\dev\\network-react-csharp\\Reactivities\\Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -8672,11 +8672,11 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\dev\\network-react-csharp\\Reactivities\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\dev\\network-react-csharp\\Reactivities\\Domain\\Domain.csproj"
+            "c:\\dev\\network-react-csharp\\Reactivities\\Domain\\Domain.csproj": {
+              "projectPath": "c:\\dev\\network-react-csharp\\Reactivities\\Domain\\Domain.csproj"
             },
-            "C:\\dev\\network-react-csharp\\Reactivities\\Persistence\\Persistence.csproj": {
-              "projectPath": "C:\\dev\\network-react-csharp\\Reactivities\\Persistence\\Persistence.csproj"
+            "c:\\dev\\network-react-csharp\\Reactivities\\Persistence\\Persistence.csproj": {
+              "projectPath": "c:\\dev\\network-react-csharp\\Reactivities\\Persistence\\Persistence.csproj"
             }
           }
         }

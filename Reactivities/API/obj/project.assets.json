@@ -49,6 +49,18 @@
           "lib/netstandard1.3/Castle.Core.dll": {}
         }
       },
+      "CloudinaryDotNet/1.8.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.3/CloudinaryDotNet.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/CloudinaryDotNet.dll": {}
+        }
+      },
       "FluentValidation/8.4.0": {
         "type": "package",
         "dependencies": {
@@ -4784,6 +4796,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Application": "1.0.0",
+          "CloudinaryDotNet": "1.8.0",
           "System.IdentityModel.Tokens.Jwt": "5.5.0"
         },
         "compile": {
@@ -4863,6 +4876,23 @@
         "lib/netstandard1.3/Castle.Core.dll",
         "lib/netstandard1.3/Castle.Core.xml",
         "readme.txt"
+      ]
+    },
+    "CloudinaryDotNet/1.8.0": {
+      "sha512": "jrxUPvVmdGL+8wDGQn4rBrRh7jKPDTqUW1kBj+fwmGdiMW5aBArQ3P2ErnYA84AQgvJnb2JwP3WTlwD2Yc/kdA==",
+      "type": "package",
+      "path": "cloudinarydotnet/1.8.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "cloudinarydotnet.1.8.0.nupkg.sha512",
+        "cloudinarydotnet.nuspec",
+        "lib/net40/CloudinaryDotNet.dll",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/netcore/CloudinaryDotNet.deps.json",
+        "lib/netcore/CloudinaryDotNet.dll",
+        "lib/netstandard1.3/CloudinaryDotNet.deps.json",
+        "lib/netstandard1.3/CloudinaryDotNet.dll"
       ]
     },
     "FluentValidation/8.4.0": {
@@ -12863,11 +12893,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dev\\network-react-csharp\\Reactivities\\API\\API.csproj",
+      "projectUniqueName": "c:\\dev\\network-react-csharp\\Reactivities\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\dev\\network-react-csharp\\Reactivities\\API\\API.csproj",
+      "projectPath": "c:\\dev\\network-react-csharp\\Reactivities\\API\\API.csproj",
       "packagesPath": "C:\\Users\\vkalachev\\.nuget\\packages\\",
-      "outputPath": "C:\\dev\\network-react-csharp\\Reactivities\\API\\obj\\",
+      "outputPath": "c:\\dev\\network-react-csharp\\Reactivities\\API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12888,11 +12918,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\dev\\network-react-csharp\\Reactivities\\Application\\Application.csproj": {
-              "projectPath": "C:\\dev\\network-react-csharp\\Reactivities\\Application\\Application.csproj"
+            "c:\\dev\\network-react-csharp\\Reactivities\\Application\\Application.csproj": {
+              "projectPath": "c:\\dev\\network-react-csharp\\Reactivities\\Application\\Application.csproj"
             },
-            "C:\\dev\\network-react-csharp\\Reactivities\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "C:\\dev\\network-react-csharp\\Reactivities\\Infrastructure\\Infrastructure.csproj"
+            "c:\\dev\\network-react-csharp\\Reactivities\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "c:\\dev\\network-react-csharp\\Reactivities\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }

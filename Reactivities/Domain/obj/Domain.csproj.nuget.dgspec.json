@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dev\\network-react-csharp\\Reactivities\\Domain\\Domain.csproj": {}
+    "c:\\dev\\network-react-csharp\\Reactivities\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\dev\\network-react-csharp\\Reactivities\\Domain\\Domain.csproj": {
+    "c:\\dev\\network-react-csharp\\Reactivities\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\network-react-csharp\\Reactivities\\Domain\\Domain.csproj",
+        "projectUniqueName": "c:\\dev\\network-react-csharp\\Reactivities\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\dev\\network-react-csharp\\Reactivities\\Domain\\Domain.csproj",
+        "projectPath": "c:\\dev\\network-react-csharp\\Reactivities\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\vkalachev\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\network-react-csharp\\Reactivities\\Domain\\obj\\",
+        "outputPath": "c:\\dev\\network-react-csharp\\Reactivities\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
