@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "dbd48574565d9eb1788b34332676a1fa825e2501"
+    "signature": "e33ed0b5061bda4bfb3af1bbb7a1fef631fc8d6f"
   },
   "compilationOptions": {
     "defines": [
@@ -90,6 +90,20 @@
         },
         "compile": {
           "lib/netstandard1.3/Castle.Core.dll": {}
+        }
+      },
+      "CloudinaryDotNet/1.8.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/netstandard1.3/CloudinaryDotNet.dll": {
+            "assemblyVersion": "1.8.0.0",
+            "fileVersion": "1.8.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.3/CloudinaryDotNet.dll": {}
         }
       },
       "FluentValidation/8.4.0": {
@@ -624,7 +638,7 @@
         "runtime": {
           "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {
             "assemblyVersion": "4.0.5.0",
-            "fileVersion": "4.700.19.46214"
+            "fileVersion": "4.0.0.0"
           }
         },
         "compile": {
@@ -687,6 +701,7 @@
       "Infrastructure/1.0.0": {
         "dependencies": {
           "Application": "1.0.0",
+          "CloudinaryDotNet": "1.8.0",
           "System.IdentityModel.Tokens.Jwt": "5.5.0"
         },
         "runtime": {
@@ -3699,6 +3714,13 @@
       "sha512": "sha512-XSNA0Gc1Zu33L+8+/3Tqt+aFu8QWS8UenVHZ7RenIP5wJfhoLrA4PnNscpxReeo5aBq8PDoGnV8rNaOzIOUo/w==",
       "path": "castle.core/4.2.1",
       "hashPath": "castle.core.4.2.1.nupkg.sha512"
+    },
+    "CloudinaryDotNet/1.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jrxUPvVmdGL+8wDGQn4rBrRh7jKPDTqUW1kBj+fwmGdiMW5aBArQ3P2ErnYA84AQgvJnb2JwP3WTlwD2Yc/kdA==",
+      "path": "cloudinarydotnet/1.8.0",
+      "hashPath": "cloudinarydotnet.1.8.0.nupkg.sha512"
     },
     "FluentValidation/8.4.0": {
       "type": "package",
