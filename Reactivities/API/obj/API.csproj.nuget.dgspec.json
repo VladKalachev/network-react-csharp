@@ -1,38 +1,42 @@
 {
   "format": 1,
   "restore": {
-    "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/API/API.csproj": {}
+    "C:\\dev\\network-react-csharp\\Reactivities\\API\\API.csproj": {}
   },
   "projects": {
-    "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/API/API.csproj": {
+    "C:\\dev\\network-react-csharp\\Reactivities\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/API/API.csproj",
+        "projectUniqueName": "C:\\dev\\network-react-csharp\\Reactivities\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/API/API.csproj",
-        "packagesPath": "/Users/vladkalachev/.nuget/packages/",
-        "outputPath": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/API/obj/",
+        "projectPath": "C:\\dev\\network-react-csharp\\Reactivities\\API\\API.csproj",
+        "packagesPath": "C:\\Users\\vkalachev\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\network-react-csharp\\Reactivities\\API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/Users/vladkalachev/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\vkalachev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 19.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Application/Application.csproj": {
-                "projectPath": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Application/Application.csproj"
+              "C:\\dev\\network-react-csharp\\Reactivities\\Application\\Application.csproj": {
+                "projectPath": "C:\\dev\\network-react-csharp\\Reactivities\\Application\\Application.csproj"
               },
-              "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Infrastructure/Infrastructure.csproj": {
-                "projectPath": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Infrastructure/Infrastructure.csproj"
+              "C:\\dev\\network-react-csharp\\Reactivities\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\dev\\network-react-csharp\\Reactivities\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -80,35 +84,39 @@
         }
       }
     },
-    "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Application/Application.csproj": {
+    "C:\\dev\\network-react-csharp\\Reactivities\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Application/Application.csproj",
+        "projectUniqueName": "C:\\dev\\network-react-csharp\\Reactivities\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Application/Application.csproj",
-        "packagesPath": "/Users/vladkalachev/.nuget/packages/",
-        "outputPath": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Application/obj/",
+        "projectPath": "C:\\dev\\network-react-csharp\\Reactivities\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\vkalachev\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\network-react-csharp\\Reactivities\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/Users/vladkalachev/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\vkalachev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 19.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Domain/Domain.csproj": {
-                "projectPath": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Domain/Domain.csproj"
+              "C:\\dev\\network-react-csharp\\Reactivities\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\dev\\network-react-csharp\\Reactivities\\Domain\\Domain.csproj"
               },
-              "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Persistence/Persistence.csproj": {
-                "projectPath": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Persistence/Persistence.csproj"
+              "C:\\dev\\network-react-csharp\\Reactivities\\Persistence\\Persistence.csproj": {
+                "projectPath": "C:\\dev\\network-react-csharp\\Reactivities\\Persistence\\Persistence.csproj"
               }
             }
           }
@@ -149,25 +157,29 @@
         }
       }
     },
-    "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Domain/Domain.csproj": {
+    "C:\\dev\\network-react-csharp\\Reactivities\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Domain/Domain.csproj",
+        "projectUniqueName": "C:\\dev\\network-react-csharp\\Reactivities\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Domain/Domain.csproj",
-        "packagesPath": "/Users/vladkalachev/.nuget/packages/",
-        "outputPath": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Domain/obj/",
+        "projectPath": "C:\\dev\\network-react-csharp\\Reactivities\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\vkalachev\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\network-react-csharp\\Reactivities\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/Users/vladkalachev/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\vkalachev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 19.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -203,32 +215,36 @@
         }
       }
     },
-    "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Infrastructure/Infrastructure.csproj": {
+    "C:\\dev\\network-react-csharp\\Reactivities\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Infrastructure/Infrastructure.csproj",
+        "projectUniqueName": "C:\\dev\\network-react-csharp\\Reactivities\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Infrastructure/Infrastructure.csproj",
-        "packagesPath": "/Users/vladkalachev/.nuget/packages/",
-        "outputPath": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Infrastructure/obj/",
+        "projectPath": "C:\\dev\\network-react-csharp\\Reactivities\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\vkalachev\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\network-react-csharp\\Reactivities\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/Users/vladkalachev/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\vkalachev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 19.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Application/Application.csproj": {
-                "projectPath": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Application/Application.csproj"
+              "C:\\dev\\network-react-csharp\\Reactivities\\Application\\Application.csproj": {
+                "projectPath": "C:\\dev\\network-react-csharp\\Reactivities\\Application\\Application.csproj"
               }
             }
           }
@@ -265,32 +281,36 @@
         }
       }
     },
-    "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Persistence/Persistence.csproj": {
+    "C:\\dev\\network-react-csharp\\Reactivities\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Persistence/Persistence.csproj",
+        "projectUniqueName": "C:\\dev\\network-react-csharp\\Reactivities\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Persistence/Persistence.csproj",
-        "packagesPath": "/Users/vladkalachev/.nuget/packages/",
-        "outputPath": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Persistence/obj/",
+        "projectPath": "C:\\dev\\network-react-csharp\\Reactivities\\Persistence\\Persistence.csproj",
+        "packagesPath": "C:\\Users\\vkalachev\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\network-react-csharp\\Reactivities\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/Users/vladkalachev/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\vkalachev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 19.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Domain/Domain.csproj": {
-                "projectPath": "/Users/vladkalachev/Desktop/Tehnoserv/network-react-csharp/Reactivities/Domain/Domain.csproj"
+              "C:\\dev\\network-react-csharp\\Reactivities\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\dev\\network-react-csharp\\Reactivities\\Domain\\Domain.csproj"
               }
             }
           }
