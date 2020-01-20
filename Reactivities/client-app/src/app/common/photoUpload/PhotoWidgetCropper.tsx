@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import Cropper from 'react-cropper';
-import 'cropperjs/dist/cropper.css';
+import './cropper.css';
 
 interface IProps {
   setImage: (file: Blob) => void;
