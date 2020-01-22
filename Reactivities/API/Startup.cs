@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using API.Middleware;
+using API.SignalR;
 using Application.Activities;
 using Application.Interfaces;
 using AutoMapper;
@@ -70,6 +71,7 @@ namespace API
             // Mediatr
             services.AddMediatR(typeof(List.Handler).Assembly);
             services.AddAutoMapper(typeof(List.Handler));
+            services.AddSignalR();
             services.AddMvc(opt =>
             {
                 var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
@@ -131,11 +133,11 @@ namespace API
 
             // app.UseHttpsRedirection();
 
-            //app.UseRouting();
+            // app.UseRouting();
             app.UseCors("CorsPolicy");
 
             app.UseAuthentication();
-            //app.UseAuthorization();
+            // app.UseAuthorization();
 
             // init Swagger 
             // Swashbuckle.AspNetCore -Version 5.0.0-rc4
@@ -145,7 +147,7 @@ namespace API
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
             });
 
-            
+            app.UseSignalR(routes => { routes.MapHub<ChatHub>("/chat");});
             app.UseMvc();
         }
     }
