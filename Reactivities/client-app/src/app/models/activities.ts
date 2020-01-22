@@ -1,4 +1,9 @@
-export interface IActivity {
+export interface IActivitiesEnvelope {
+    activities: IActivity[];
+    activityCount: number;
+  }
+  
+  export interface IActivity {
     id: string;
     title: string;
     description: string;
@@ -8,14 +13,24 @@ export interface IActivity {
     venue: string;
     isGoing: boolean;
     isHost: boolean;
-    attendees: IAttendee[]
-}
-
-export interface IActivityFormValues extends Partial<IActivity> {
+    attendees: IAttendee[];
+    comments: IComment[];
+  }
+  
+  export interface IComment {
+    id: string;
+    createdAt: Date;
+    body: string;
+    username: string;
+    displayName: string;
+    image: string;
+  }
+  
+  export interface IActivityFormValues extends Partial<IActivity> {
     time?: Date;
-}
-
-export class ActivityFormValues implements IActivityFormValues {
+  }
+  
+  export class ActivityFormValues implements IActivityFormValues {
     id?: string = undefined;
     title: string = '';
     category: string = '';
@@ -24,18 +39,20 @@ export class ActivityFormValues implements IActivityFormValues {
     time?: Date = undefined;
     city: string = '';
     venue: string = '';
-
+  
     constructor(init?: IActivityFormValues) {
-        if (init && init.date) {
-            init.time = init.date;
-        }  
-        Object.assign(this, init);
+      if (init && init.date) {
+        init.time = init.date;
+      }
+      Object.assign(this, init);
     }
-}
-
-export interface IAttendee {
+  }
+  
+  export interface IAttendee {
     username: string;
     displayName: string;
     image: string;
     isHost: boolean;
-}
+    following?: boolean;
+  }
+  
