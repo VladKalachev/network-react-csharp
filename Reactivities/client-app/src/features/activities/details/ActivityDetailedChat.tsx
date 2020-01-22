@@ -17,12 +17,12 @@ const ActivityDetailedChat = () => {
   } = rootStore.activityStore;
 
   useEffect(() => {
-    createHubConnection();
+    createHubConnection(activity!.id);
     return () => {
       stopHubConnection();
     }
-  }, [createHubConnection, stopHubConnection])
-
+  }, [createHubConnection, stopHubConnection, activity]);
+  
   return (
     <Fragment>
       <Segment
@@ -42,8 +42,7 @@ const ActivityDetailedChat = () => {
           <Comment.Content>
             <Comment.Author as={Link} to={`/profile/${comment.username}`}>{comment.displayName}</Comment.Author>
             <Comment.Metadata>
-              <div>{comment.createdAt}</div>
-              {/* <div>{formatDistance(comment.createdAt, new Date())}</div> */}
+              <div>{formatDistance( new Date(comment.createdAt), new Date())}</div>
             </Comment.Metadata>
             <Comment.Text>{comment.body}</Comment.Text>
           </Comment.Content>
