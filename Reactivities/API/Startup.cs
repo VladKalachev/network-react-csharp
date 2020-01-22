@@ -65,7 +65,7 @@ namespace API
                 {
                     setup.AddPolicy("CorsPolicy", polucy =>
                     {
-                        polucy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:3000");
+                        polucy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:3000").AllowCredentials();
                     });
             });
 
