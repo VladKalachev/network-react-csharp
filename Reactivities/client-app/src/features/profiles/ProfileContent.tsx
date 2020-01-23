@@ -9,8 +9,7 @@ const panes = [
   { menuItem: 'About', render: () => <ProfileDescription /> },
   { menuItem: 'Photos', render: () => <ProfilePhotos /> },
   {
-    menuItem: 'Activities',
-    render: () => <ProfileActivities />
+    menuItem: 'Activities', render: () => <ProfileActivities />
   },
   { menuItem: 'Followers', render: () => <ProfileFollowings /> },
   { menuItem: 'Following', render: () => <ProfileFollowings /> }
