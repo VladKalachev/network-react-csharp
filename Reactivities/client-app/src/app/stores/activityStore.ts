@@ -1,4 +1,4 @@
-import { observable, action, computed, runInAction } from 'mobx';
+import { observable, action, computed, runInAction, reaction } from 'mobx';
 import { SyntheticEvent } from 'react';
 import { IActivity } from '../models/activities';
 import agent from '../api/agent';
@@ -13,6 +13,15 @@ export default class ActivityStore {
   rootStore: RootStore;
   constructor(rootStore: RootStore) {
     this.rootStore = rootStore;
+
+      reaction(
+        () => this.predicate.keys(),
+        () => {
+          this.page = 0;
+          this.activityRegistry.clear();
+          this.loadActivities();
+        }
+      )
   }
 
   @observable activityRegistry = new Map();
