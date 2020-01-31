@@ -157,6 +157,9 @@ namespace API
 
             // app.UseHttpsRedirection();
 
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
+
             // app.UseRouting();
             app.UseCors("CorsPolicy");
 
@@ -171,8 +174,13 @@ namespace API
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
             });
 
-            app.UseSignalR(routes => { routes.MapHub<ChatHub>("/chat");});
+            app.UseSignalR(routes => 
+            { 
+                routes.MapHub<ChatHub>("/chat");
+            });
             app.UseMvc();
+
+           
         }
     }
 }
